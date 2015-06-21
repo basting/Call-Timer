@@ -1,7 +1,10 @@
 package com.bgh.calltimer;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.telephony.PhoneStateListener;
+import android.telephony.TelephonyManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,6 +15,14 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Retrieving the telephony manager
+        String srvcName = Context.TELEPHONY_SERVICE;
+        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(srvcName);
+
+        CallStateListener stateListener = new CallStateListener();
+
+        telephonyManager.listen(stateListener, PhoneStateListener.LISTEN_CALL_STATE);
     }
 
     @Override
