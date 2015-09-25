@@ -17,12 +17,12 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         // Retrieving the telephony manager
-        String srvcName = Context.TELEPHONY_SERVICE;
-        TelephonyManager telephonyManager = (TelephonyManager)getSystemService(srvcName);
+        //String srvcName = Context.TELEPHONY_SERVICE;
+        //TelephonyManager telephonyManager = (TelephonyManager)getSystemService(srvcName);
 
-        CallStateListener stateListener = new CallStateListener();
+        //CallStateListene stateListener = new CallStateListener();
 
-        telephonyManager.listen(stateListener, PhoneStateListener.LISTEN_CALL_STATE);
+        //telephonyManager.listen(stateListener, PhoneStateListener.LISTEN_CALL_STATE);
     }
 
     @Override
